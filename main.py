@@ -5,8 +5,8 @@ from pyglet.window import key, mouse
 
 
 class Window(pyglet.window.Window):
-  def __init__(self, width: int, height: int, caption: str, resizable: bool) -> None:
-    pass
+  def __init__(self, *args, **kwargs) -> None:
+    super(Window, self).__init__(*args, **kwargs)
 
 
 def main():
