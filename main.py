@@ -38,11 +38,11 @@ class Window(pyglet.window.Window):
 
     self.mouse_capture_enabled = False # Whether the mouse is captured by the window
     
-    # user available modes {flying_enabled, walking_enabled, standing_enabled}
-    self.user_modes = (0, 0, 0)
+  
+  def collide(self, positionX: int, positionY: int, positionZ: int, playerHeight: float):
+    # Checks to see if the player at the given `position` and `height` is colliding with any blocks in the world.
+  
 
-    self.user_is_flying = False        # Whether the user is flying
-    self.user_is_jumping = False       # Whether the user is jumping
 
 
 def main():
