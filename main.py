@@ -32,6 +32,12 @@ def toggle_state(currentState, flag):
   return currentState[flag]
 
 
+class Model(object):
+
+  def __init__(self):
+    pass
+
+
 class Window(pyglet.window.Window):
   def __init__(self, *args, **kwargs) -> None:
     super(Window, self).__init__(*args, **kwargs)
@@ -41,12 +47,23 @@ class Window(pyglet.window.Window):
   
   def collide(self, positionX: int, positionY: int, positionZ: int, playerHeight: float):
     # Checks to see if the player at the given `position` and `height` is colliding with any blocks in the world.
+    pass
+
+
+class KeyboardEventHandler:
+  """
+  Encapsulates the logic for handling keyboard events.
+  """
   
+
 
 
 
 def main():
   window = Window(width=1280, height=720, caption="DeCraft", resizable=True)
+  KeyboardEventHandler(window)
+
+  pyglet.app.run()
 
 
 if __name__ == "__main__":
