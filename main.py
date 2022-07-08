@@ -24,6 +24,18 @@ STATE = { ALLOWS_FLIGHT: False, ALLOWS_JUMPING: False, ALLOWS_MOVEMENT: False, A
 COLLISION_STATE = { COLLISION_TOP: False, COLLISION_BOTTOM: False, COLLISION_LEFT: False, COLLISION_RIGHT: False }
 
 
+def get_cube_vertices(x, y, z, n):
+  # Return the vertices of the cube at position x, y, z with size 2*n.
+  return [
+      x-n,y+n,z-n, x-n,y+n,z+n, x+n,y+n,z+n, x+n,y+n,z-n,  # top
+      x-n,y-n,z-n, x+n,y-n,z-n, x+n,y-n,z+n, x-n,y-n,z+n,  # bottom
+      x-n,y-n,z-n, x-n,y-n,z+n, x-n,y+n,z+n, x-n,y+n,z-n,  # left
+      x+n,y-n,z+n, x+n,y-n,z-n, x+n,y+n,z-n, x+n,y+n,z+n,  # right
+      x-n,y-n,z+n, x+n,y-n,z+n, x+n,y+n,z+n, x-n,y+n,z+n,  # front
+      x+n,y-n,z-n, x-n,y-n,z-n, x-n,y+n,z-n, x+n,y+n,z-n,  # back
+  ]
+
+
 def toggle_state(currentState, flag):
   if flag in currentState:
     currentState[flag] = not currentState[flag]
@@ -54,7 +66,8 @@ class KeyboardEventHandler:
   """
   Encapsulates the logic for handling keyboard events.
   """
-  
+  def __init__(self, window):
+    pass
 
 
 
