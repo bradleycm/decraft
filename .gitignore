@@ -3,3 +3,10 @@ venv
 /venv
 env
 /env
+
+# python garbage
+*.pyc
+.venv
+conftest.py
+__pycache__/
+.pytest_cache/
